@@ -877,9 +877,6 @@
             }
         }
 
-        /* =========================================
-           YANGI MODAL STILLARI (Sizning rangingizda)
-           ========================================= */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -1403,16 +1400,12 @@
             return m;
         });
     }
-
-    // ==============================================
-    // YANGILANGAN: CHIROYLI MODAL OYNA (prompt o'rniga)
-    // ==============================================
     function openAddVideoModal() {
         const activeLangElem = document.querySelector(".lang-item.active");
         if (!activeLangElem) return;
         const currentLang = activeLangElem.getAttribute("data-lang");
 
-        // Oyna (Modal) yaratish
+  
         const overlay = document.createElement('div');
         overlay.className = 'modal-overlay';
         overlay.innerHTML = `
@@ -1437,13 +1430,11 @@
         `;
         document.body.appendChild(overlay);
 
-        // Birinchi inputga fokus berish
         setTimeout(() => {
             const titleInput = document.getElementById('modalTitle');
             if (titleInput) titleInput.focus();
         }, 100);
 
-        // Yopish funksiyasi
         const closeModal = () => overlay.remove();
         
         document.getElementById('btnCancelModal').onclick = closeModal;
@@ -1457,7 +1448,6 @@
             }
         });
 
-        // Saqlash funksiyasi
         document.getElementById('btnSaveModal').onclick = () => {
             const title = document.getElementById('modalTitle').value.trim();
             const desc = document.getElementById('modalDesc').value.trim();
